@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="/home.css">
+  </head>
+
+  <body>
+    <h1>Groceries</h1>
+
+    <ul>
+      <% CSV.foreach('grocery_list.csv', headers: true) do |item| %>
+        <li><%= item %></a></li>
+      <% end %>
+    </ul>
+
+    <form action="/grocery-list" method="post">
+      <label for="add_item">Name:</label>
+      <input type="text" id="add_item" name="add_item">
+
+      <input type="submit" value= "Add">
+    </form>
+  </body>
+</html>
